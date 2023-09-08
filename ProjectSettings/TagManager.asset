@@ -14,13 +14,13 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - BackGround
+  - Boundaries
+  - Player
+  - Enemies
+  - Spawners
+  - Buildings
+  - PowerUps
   - 
   - 
   - 

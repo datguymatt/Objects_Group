@@ -38,30 +38,30 @@ public class GameManager2 : MonoBehaviour
     private Weapon shootingWeapon = new Weapon("Shooting Enemy Weapon", shootingEnemyDamage, shootingEnemyBulletSpeed);
     private Weapon missileWeapon = new Weapon("Missile Enemy Weapon", missileEnemyDamage, missileEnemyBulletSpeed);
 
-    //instance
-    private static GameManager2 instance;
+    ////instance
+    //private static GameManager2 instance;
 
-    public static GameManager2 GetInstance()
-    {
-        return instance;
-    }
-    void SetSingleton()
-    {
-        if (instance != null && instance != this) 
-        { 
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-        }
-        DontDestroyOnLoad(this);
-    }
+    //public static GameManager2 GetInstance()
+    //{
+    //    return instance;
+    //}
+    //void SetSingleton()
+    //{
+    //    if (instance != null && instance != this) 
+    //    { 
+    //        Destroy(gameObject);
+    //    }
+    //    else
+    //    {
+    //        instance = this;
+    //    }
+    //    DontDestroyOnLoad(this);
+    //}
 
-    private void Awake()
-    {
-        SetSingleton();
-    }
+    //private void Awake()
+    //{
+    //    SetSingleton();
+    //}
 
     void Start()
     {
