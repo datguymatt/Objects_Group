@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bad911f9a7d8be543acc35ad2244cedf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 75
+  currentHealth: 75
   speed: 0.25
   weaponDamage: 1
   attackTime: 0.68

@@ -6,8 +6,6 @@ public class Health
     private float currentHealth;
     private float maxHealth;
 
-    private float healthRegenRate;
-
 
     public float GetHealth()
     {
@@ -20,10 +18,10 @@ public class Health
 
         currentHealth = value;
     }
-    public Health(float _maxHealth, float _healthRegenRate, float _currentHealth)
+    public Health(float _maxHealth, float _currentHealth)
     {
         maxHealth = _maxHealth;
-        healthRegenRate = _healthRegenRate;
+        
         currentHealth = _currentHealth;
     }
 
@@ -37,7 +35,7 @@ public class Health
     public void RegenHealth()
     {
         //this is currently not being used
-        AddHealth(healthRegenRate * Time.deltaTime);
+        //
     }
 
     public void AddHealth(float value)

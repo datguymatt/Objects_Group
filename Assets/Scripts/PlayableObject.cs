@@ -7,6 +7,9 @@ using UnityEngine;
 public abstract class PlayableObject : MonoBehaviour, IDamageable
 {
     public Health health = new Health();
+    //serialized fields for all inheritting members
+    [SerializeField] protected float maxHealth;
+    [SerializeField] protected float currentHealth;
 
     public Weapon weapon;
 
@@ -26,9 +29,7 @@ public abstract class PlayableObject : MonoBehaviour, IDamageable
     {}
 
     public virtual void Attack(float interval)
-    {
- 
-    }
+    {}
 
     public abstract void Attack(Transform target);
 
@@ -44,19 +45,5 @@ public abstract class PlayableObject : MonoBehaviour, IDamageable
         {
             Die();
         }
-    }
-
-    public void GetDamage(int speed)
-    {
-        if (speed > 10)
-        {
-            health.DeductHealth(10);
-        }
-            
-        else
-        {
-            health.DeductHealth(speed);
-        }
-            
     }
 }

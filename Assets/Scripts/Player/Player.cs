@@ -13,8 +13,6 @@ public class Player : PlayableObject
     [SerializeField] private float bulletPowerupSpeed = 0.5f;
     [SerializeField] private Bullet bulletPreFab;
     [SerializeField] private Bomb bombPreFab;
-    [SerializeField] float maxHealthSet;
-    [SerializeField] float currentHealthSet;
 
     //firepoint
     [SerializeField] private Transform firePoint;
@@ -47,8 +45,11 @@ public class Player : PlayableObject
 
     private void Start()
     {
-        health = new Health(maxHealthSet, 0.5f, currentHealthSet);
-        health.RegenHealth();
+        //explicity set health vars, just in case inspector is defaulting to 0
+        maxHealth = 200;
+        currentHealth = 200;
+        //set player health
+        health = new Health(maxHealth, currentHealth);
 
         //Set The Player Weapon
         Debug.Log(weaponDamage + "is your wepaon damage");

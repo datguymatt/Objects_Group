@@ -11,7 +11,7 @@ public class MeleeEnemy : Enemy
     {
         //base is just the virtual class that it is inheriting from????
         base.Start();
-        health = new Health(200, 0, 200);
+        health = new Health(maxHealth, currentHealth);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

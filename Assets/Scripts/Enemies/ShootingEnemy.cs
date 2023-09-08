@@ -12,12 +12,13 @@ public class ShootingEnemy : Enemy
     [SerializeField] protected Bullet bulletPreFab;
 
     [SerializeField] protected float bulletDamage;
+    
 
     protected override void Start()
     {
         
         base.Start();
-        health = new Health(200, 0, 200);
+        health = new Health(maxHealth, currentHealth);
         weapon = new Weapon("Shooting Enemy Weapon", bulletDamage, bulletSpeed);
     }
 

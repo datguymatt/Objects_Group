@@ -15,7 +15,7 @@ public class MissileEnemy : Enemy
     protected override void Start()
     {
         base.Start();
-        health = new Health(200, 0, 200);
+        health = new Health(maxHealth, currentHealth);
         weapon = new Weapon("Missile Enemy Weapon", bulletDamage, bulletSpeed);
     }
 

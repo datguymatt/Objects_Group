@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Enemy : PlayableObject
 {
-    private EnemyType enemyType;
-
     protected Transform target; 
 
     [SerializeField] protected float speed;
     [SerializeField] protected float weaponDamage;
+    
 
     protected AudioManager audioManager;
 
@@ -55,11 +54,6 @@ public class Enemy : PlayableObject
 
     public override void Attack(Transform target)
     {}
-
-    public void SetEnemyType(EnemyType enemyType)
-    {
-        this.enemyType = enemyType;
-    }
 
     public override void GetDamage(float damage)
     {
