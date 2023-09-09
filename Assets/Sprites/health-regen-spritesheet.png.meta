@@ -1,0 +1,1103 @@
+fileFormatVersion: 2
+guid: 3819c3ba9c7f18746a99b498f42080e1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: health-regen-spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2136
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6666a0df4120ee409da0f9aa42d6ecc
+      internalID: -1510683941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 2136
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2286c274a0d8d834d8d9432eb75ef4a3
+      internalID: 432616610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 2136
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bcfb579dc71b9e4b91bd6d6496c8173
+      internalID: 903409812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 2136
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28cfda241cd54fc4781d60c1b8566cd0
+      internalID: 2062654003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 2136
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71883385d33bef84ca4523b61710c501
+      internalID: 280187131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 1780
+        y: 2136
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e632c090d55e524e932c8d5196d4d63
+      internalID: 1106755286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 2136
+        y: 2136
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7063187decc2cc4aaf4564880e5d10f
+      internalID: 585236141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1780
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f12c22a77a48f94db716e14e3b130d8
+      internalID: 1122959747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 1780
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b568d43cb6e26954e9723cfb07490d10
+      internalID: -1966608318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 1780
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5888bad03c64df4695cd5e9f517d7c4
+      internalID: -619100265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 1780
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f8e9f917e1b11441ac54e25c2a9074a
+      internalID: -630720207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 1780
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1c972068b189414db076746a843bbca
+      internalID: 386100527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 1780
+        y: 1780
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57e6abca9585b4b4c93c8576a4eb1330
+      internalID: -1446027826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 2136
+        y: 1780
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a10b92a992aa66f44baed2203b2bd0e9
+      internalID: 1901361596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1424
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00657727c52e49144b6b6f393d1a2a0b
+      internalID: 1556234475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 1424
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba2f94d3dd470474b940af3dd127be7b
+      internalID: -1587433472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 1424
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e7e6717c3ba1f24597a2e5a82dfdfb9
+      internalID: 2027267156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 1424
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f769aeb0e82d73341a6052df97028a41
+      internalID: -904092319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 1424
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3ee65c974dba774290358127158ec99
+      internalID: 1007349166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 1780
+        y: 1424
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2525b0cca88228c4a9857235f8245016
+      internalID: -1125245955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 2136
+        y: 1424
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4d6d952fbc1e304d9ea19cda766b928
+      internalID: -847320781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1068
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db01d124f1cb9c544aaebe9a0e366a8c
+      internalID: 690965762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 1068
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c3fb264c53b2704e96ce8c6132199bd
+      internalID: 1895510817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 1068
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9739a970a89b6043ae512bf9edc8f96
+      internalID: -1220206054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 1068
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf65185fdf224a744adf5bb641427ca9
+      internalID: -2107616398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 1068
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7f4c0d2d0e6b54489905863afbba054
+      internalID: 2141082453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 1780
+        y: 1068
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08bf943135998764db959a22d1ac721c
+      internalID: -1470369249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 2136
+        y: 1068
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e60505fb9f63d2419cf6b35d7ea43da
+      internalID: -1102324431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 712
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0eb8a223ce3c614ea053a752a17bf20
+      internalID: -1843654363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 712
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08d9eb1a8db16194b9812167f5fac295
+      internalID: 433355608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 712
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 148d52ceaaebaef4b83621ccc2d8cfb3
+      internalID: -2110197412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 712
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ef5d114599f2f4890bb137f3156c74
+      internalID: 1155670123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 712
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8b5dbfc4eb16474d9ee8b7143bb1e49
+      internalID: -979487152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 1780
+        y: 712
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0727aa634ba81a046a2c15e401295cad
+      internalID: -287389318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 2136
+        y: 712
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37430e3c32e53564a9bf0c8dc199de4d
+      internalID: 1704639098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 356
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cebdd7f878e6b744abe09a01fb34a1b
+      internalID: -883804676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 356
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7607ff5ffd67b2429b2e6b88088dec7
+      internalID: -1597802825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 356
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaff0fc8d60c77b47a67f97e381b2c61
+      internalID: -1172143365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 356
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 268d725c56e4beb4f8afdcf4e321be57
+      internalID: 1028129362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 356
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d8752a550c00ca4fb1893a29f064443
+      internalID: 1261953098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 1780
+        y: 356
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd9cadb69ed4b834d90c02486d7216f4
+      internalID: 1800276981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 2136
+        y: 356
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc20343323462a439518f3dc4b89178
+      internalID: 1426355878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac6bc6cfcb4f2974a99c7039335fb536
+      internalID: -1847226241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health-regen-spritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 0
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 654322be589c29c439ca23277aa5b1d4
+      internalID: -1791197381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      health-regen-spritesheet_0: -1510683941
+      health-regen-spritesheet_1: 432616610
+      health-regen-spritesheet_10: -630720207
+      health-regen-spritesheet_11: 386100527
+      health-regen-spritesheet_12: -1446027826
+      health-regen-spritesheet_13: 1901361596
+      health-regen-spritesheet_14: 1556234475
+      health-regen-spritesheet_15: -1587433472
+      health-regen-spritesheet_16: 2027267156
+      health-regen-spritesheet_17: -904092319
+      health-regen-spritesheet_18: 1007349166
+      health-regen-spritesheet_19: -1125245955
+      health-regen-spritesheet_2: 903409812
+      health-regen-spritesheet_20: -847320781
+      health-regen-spritesheet_21: 690965762
+      health-regen-spritesheet_22: 1895510817
+      health-regen-spritesheet_23: -1220206054
+      health-regen-spritesheet_24: -2107616398
+      health-regen-spritesheet_25: 2141082453
+      health-regen-spritesheet_26: -1470369249
+      health-regen-spritesheet_27: -1102324431
+      health-regen-spritesheet_28: -1843654363
+      health-regen-spritesheet_29: 433355608
+      health-regen-spritesheet_3: 2062654003
+      health-regen-spritesheet_30: -2110197412
+      health-regen-spritesheet_31: 1155670123
+      health-regen-spritesheet_32: -979487152
+      health-regen-spritesheet_33: -287389318
+      health-regen-spritesheet_34: 1704639098
+      health-regen-spritesheet_35: -883804676
+      health-regen-spritesheet_36: -1597802825
+      health-regen-spritesheet_37: -1172143365
+      health-regen-spritesheet_38: 1028129362
+      health-regen-spritesheet_39: 1261953098
+      health-regen-spritesheet_4: 280187131
+      health-regen-spritesheet_40: 1800276981
+      health-regen-spritesheet_41: 1426355878
+      health-regen-spritesheet_42: -1847226241
+      health-regen-spritesheet_43: -1791197381
+      health-regen-spritesheet_5: 1106755286
+      health-regen-spritesheet_6: 585236141
+      health-regen-spritesheet_7: 1122959747
+      health-regen-spritesheet_8: -1966608318
+      health-regen-spritesheet_9: -619100265
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

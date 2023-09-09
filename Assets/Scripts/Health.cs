@@ -40,7 +40,16 @@ public class Health
 
     public void AddHealth(float value)
     {
-        currentHealth = Mathf.Max(currentHealth, currentHealth + value);
+        if ((currentHealth + value) > maxHealth)
+        {
+            //only set to max, don't let it exceed
+            currentHealth = maxHealth;
+        } else
+        {
+            //otherwise, add it!
+            currentHealth += value;
+        }
+        ScoreManager.health = currentHealth;
     }
     public virtual void DeductHealth(float amount)
     {

@@ -12,6 +12,7 @@ public class GameManager2 : MonoBehaviour
     //powerup prefabs
     [SerializeField] private GameObject shootingPowerupPreFab;
     [SerializeField] private GameObject bombPreFab;
+    [SerializeField] private GameObject healthRegenPreFab;
     //spawns
     [SerializeField] private Transform[] spawnPositions;
     [SerializeField] private Transform[] powerupSpawnPoints;
@@ -22,6 +23,7 @@ public class GameManager2 : MonoBehaviour
     [SerializeField] private float enemySpawnRate;
     [SerializeField] private float powerupSpawnRate;
     [SerializeField] private float bombSpawnRate;
+    [SerializeField] private float healthRegenSpawnRate;
 
     //temp stuff
     private GameObject tempEnemy;
@@ -69,6 +71,7 @@ public class GameManager2 : MonoBehaviour
         StartCoroutine(SpawnEnemy());
         StartCoroutine(SpawnPowerup());
         StartCoroutine(SpawnBomb());
+        StartCoroutine(SpawnHealthRegen());
         //start the main theme music
         AudioManager audioManager = FindObjectOfType<AudioManager>();
         audioManager.PlayMusicAudio("music_main");
@@ -127,6 +130,16 @@ public class GameManager2 : MonoBehaviour
             tempPowerup = Instantiate(bombPreFab);
             tempPowerup.transform.position = powerupSpawnPoints[Random.Range(0, powerupSpawnPoints.Length)].position;
             yield return new WaitForSeconds(bombSpawnRate);
+        }
+    }
+
+    IEnumerator SpawnHealthRegen()
+    {
+        while (isEnemySpawning)
+        {
+            tempPowerup = Instantiate(healthRegenPreFab);
+            tempPowerup.transform.position = powerupSpawnPoints[Random.Range(0, powerupSpawnPoints.Length)].position;
+            yield return new WaitForSeconds(healthRegenSpawnRate);
         }
     }
 
