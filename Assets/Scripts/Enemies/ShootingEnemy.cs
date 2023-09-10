@@ -13,12 +13,13 @@ public class ShootingEnemy : Enemy
 
     [SerializeField] protected float bulletDamage;
 
+
     protected override void Start()
     {
-        
         base.Start();
         health = new Health(200, 0, 200);
         weapon = new Weapon("Shooting Enemy Weapon", bulletDamage, bulletSpeed);
+        bulletDamage = bulletDamage + difficultyIncrease;
     }
 
     protected void Awake()
@@ -27,6 +28,7 @@ public class ShootingEnemy : Enemy
     }
     protected override void Update()
     {
+        
         base.Update();
         Vector2 direction = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
         transform.right = direction;

@@ -13,6 +13,7 @@ public class ScoreManager : MonoBehaviour
     public static float health;
     public static string quickFireTimer;
     public static int bombsInventory;
+    
 
     //UI overlay text
     [SerializeField] private TextMeshProUGUI scoreText;
@@ -57,12 +58,14 @@ public class ScoreManager : MonoBehaviour
 
         }
     }
+   
 
     // Update is called once per frame
     void Update()
     {
         //update the UI with current globally accessible values
         scoreText.text = "Score " + score.ToString();
+        
         healthText.text = "Health: " + Mathf.RoundToInt(health).ToString();
         //highscore feature needed
 

@@ -5,10 +5,12 @@ using UnityEngine;
 public class MeleeEnemy : Enemy
 {
 
-    [SerializeField] private float meleeDamage = 25;
+    [SerializeField] public float meleeDamage;
+
 
     protected override void Start()
     {
+        meleeDamage = meleeDamage + difficultyIncrease;
         //base is just the virtual class that it is inheriting from????
         base.Start();
         health = new Health(200, 0, 200);
@@ -32,6 +34,7 @@ public class MeleeEnemy : Enemy
 
     protected override void Update()
     {
+        
         Attack(target);
     }
 

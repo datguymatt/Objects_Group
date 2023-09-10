@@ -819,6 +819,7 @@ GameObject:
   m_Component:
   - component: {fileID: 699174943}
   - component: {fileID: 699174942}
+  - component: {fileID: 699174944}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -862,6 +863,10 @@ MonoBehaviour:
   - {fileID: 2716389}
   - {fileID: 1084582750}
   - {fileID: 908163517}
+  enemyArray:
+  - {fileID: 6769147759240711518, guid: 7eb7dd24a8bdd544e8f599fdfd96c59d, type: 3}
+  - {fileID: 3100639870944999846, guid: 23a0da981d0c6954086b12171cf6f076, type: 3}
+  - {fileID: 8138528360951018140, guid: 1813a9683acf38d4b8bf287053ad9456, type: 3}
   enemySpawnRate: 11.17
   powerupSpawnRate: 28.54
   bombSpawnRate: 54.44
@@ -880,6 +885,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &699174944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699174941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7b715d89bcf194889e0821ccc0de53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missleEnemy: {fileID: 3100639870944999846, guid: 23a0da981d0c6954086b12171cf6f076, type: 3}
+  meleeEnemy: {fileID: 6769147759240711518, guid: 7eb7dd24a8bdd544e8f599fdfd96c59d, type: 3}
+  shooter: {fileID: 8138528360951018140, guid: 1813a9683acf38d4b8bf287053ad9456, type: 3}
+  gameManager: {fileID: 699174942}
+  scoreManager: {fileID: 1416477248}
+  score: 0
 --- !u!1 &739364667
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,8 +914,8 @@ GameObject:
   - component: {fileID: 739364670}
   - component: {fileID: 739364669}
   - component: {fileID: 739364668}
-  - component: {fileID: 739364671}
   - component: {fileID: 739364672}
+  - component: {fileID: 739364671}
   - component: {fileID: 739364673}
   - component: {fileID: 739364674}
   - component: {fileID: 739364675}

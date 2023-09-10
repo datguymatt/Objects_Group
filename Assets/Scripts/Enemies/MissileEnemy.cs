@@ -12,11 +12,14 @@ public class MissileEnemy : Enemy
 
     [SerializeField] protected float bulletDamage;
 
+
+
     protected override void Start()
     {
         base.Start();
         health = new Health(200, 0, 200);
         weapon = new Weapon("Missile Enemy Weapon", bulletDamage, bulletSpeed);
+        bulletDamage = bulletDamage + difficultyIncrease;
     }
 
     protected void Awake()
@@ -25,6 +28,7 @@ public class MissileEnemy : Enemy
     }
     protected override void Update()
     {
+        
         base.Update();
         //move while not in the player perimeter
         Vector2 direction = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);

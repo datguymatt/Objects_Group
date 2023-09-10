@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.41
   weaponDamage: 0
+  difficultyIncrease: 12
   meleeDamage: 25
 --- !u!61 &4527097007928013885
 BoxCollider2D:

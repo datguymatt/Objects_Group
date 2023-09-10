@@ -9,17 +9,19 @@ public class GameManager2 : MonoBehaviour
     [SerializeField] private GameObject meleeEnemyPreFab;
     [SerializeField] private GameObject shootingEnemyPreFab;
     [SerializeField] private GameObject missileEnemyPreFab;
+    private int randomEnemy;
     //powerup prefabs
     [SerializeField] private GameObject shootingPowerupPreFab;
     [SerializeField] private GameObject bombPreFab;
     //spawns
     [SerializeField] private Transform[] spawnPositions;
     [SerializeField] private Transform[] powerupSpawnPoints;
+    [SerializeField] private GameObject[] enemyArray;
     //bool for spawn
     private bool isEnemySpawning;
 
     [Header("Game Variables")]
-    [SerializeField] private float enemySpawnRate;
+    [SerializeField] public float enemySpawnRate;
     [SerializeField] private float powerupSpawnRate;
     [SerializeField] private float bombSpawnRate;
 
@@ -65,6 +67,7 @@ public class GameManager2 : MonoBehaviour
 
     void Start()
     {
+        
         isEnemySpawning = true;
         StartCoroutine(SpawnEnemy());
         StartCoroutine(SpawnPowerup());
@@ -72,6 +75,10 @@ public class GameManager2 : MonoBehaviour
         //start the main theme music
         AudioManager audioManager = FindObjectOfType<AudioManager>();
         audioManager.PlayMusicAudio("music_main");
+    }
+    private void Update()
+    {
+        randomEnemy = Random.Range(0, 3);
     }
 
     void CreateEnemy()
@@ -98,6 +105,10 @@ public class GameManager2 : MonoBehaviour
         tempEnemy.GetComponent<Enemy>().weapon =  missileWeapon;
         tempEnemy.GetComponent<MissileEnemy>().SetMissileEnemy(2f);
     }
+    void CreateRandomEnemy()
+    {
+        Instantiate(enemyArray[randomEnemy], spawnPositions[Random.Range(0, spawnPositions.Length)]);
+    }
 
     IEnumerator SpawnEnemy()
     {
@@ -106,6 +117,20 @@ public class GameManager2 : MonoBehaviour
             CreateEnemy();
             CreateShootingEnemy();
             CreateMissileEnemy();
+            if (ScoreManager.score > 300)
+            {
+                CreateRandomEnemy();
+            }
+            if (ScoreManager.score > 600)
+            {
+                CreateRandomEnemy(); CreateRandomEnemy();
+
+            }
+            if(ScoreManager.score > 900)
+            {
+                CreateRandomEnemy(); CreateRandomEnemy(); CreateRandomEnemy();
+            }
+            
             yield return new WaitForSeconds(enemySpawnRate);
         }
     }
@@ -129,7 +154,6 @@ public class GameManager2 : MonoBehaviour
             yield return new WaitForSeconds(bombSpawnRate);
         }
     }
-
 
 
 }

@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class Enemy : PlayableObject
 
     [SerializeField] protected float speed;
     [SerializeField] protected float weaponDamage;
+    public int difficultyIncrease = 0;
 
     protected AudioManager audioManager;
 
@@ -41,6 +43,7 @@ public class Enemy : PlayableObject
     }
     public override void Move(float speed)
     {
+        speed = speed + difficultyIncrease;
         transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
 
@@ -71,4 +74,6 @@ public class Enemy : PlayableObject
             Die();
         }
     }
+
+     
 }
