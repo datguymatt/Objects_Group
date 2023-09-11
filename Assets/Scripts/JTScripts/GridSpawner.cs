@@ -27,7 +27,7 @@ public class GridSpawner : MonoBehaviour
             for (int col = 0; col < gridSizeX; col++)
             {
                 // Calculate the position for each grid cell
-                Vector3 position = new Vector3(col * cellSize, row * cellSize, 0f);
+                Vector3 position = new Vector3((col * cellSize) +.5f, (row * cellSize)+.5f, 0f);
 
                 // Spawn the prefab as a child of the GridManager at the calculated position
                 GameObject newObject = Instantiate(cellChild, position, Quaternion.identity);

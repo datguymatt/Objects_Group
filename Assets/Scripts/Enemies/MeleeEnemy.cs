@@ -11,7 +11,7 @@ public class MeleeEnemy : Enemy
     {
         //base is just the virtual class that it is inheriting from????
         base.Start();
-        health = new Health(200, 0, 200);
+        health = new Health(50, 0, 50);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -33,6 +33,9 @@ public class MeleeEnemy : Enemy
     protected override void Update()
     {
         Attack(target);
+        Vector2 direction = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
+        transform.right = direction;
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
 
     public override void Attack(Transform target)

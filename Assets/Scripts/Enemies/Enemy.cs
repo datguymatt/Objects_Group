@@ -26,7 +26,6 @@ public class Enemy : PlayableObject
     {
         ////rotate towards player
         target = GameObject.FindWithTag("Player").transform;
-        transform.LookAt(target);
     }
     public override void Move(Vector2 direction, Vector2 target)
     {}
@@ -41,7 +40,9 @@ public class Enemy : PlayableObject
     }
     public override void Move(float speed)
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        Vector2 direction = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
+        transform.right = direction;
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
 
     public override void Shoot()

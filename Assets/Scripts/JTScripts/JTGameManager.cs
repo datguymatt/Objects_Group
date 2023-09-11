@@ -15,11 +15,12 @@ public class JTGameManager : MonoBehaviour
 [SerializeField] private GameObject bombPreFab;
 //spawns
 //[SerializeField] private Transform[] spawnPositions;
-[SerializeField] private Transform[] powerupSpawnPoints;
+//[SerializeField] private Transform[] powerupSpawnPoints;
 
     // JT SCRIPTS
     [SerializeField] private GameObject parentGameObject;
-    public List<GameObject> childObjects = new List<GameObject>(); // List to store child objects
+    [SerializeField] private List<GameObject> childObjects = new List<GameObject>(); // List to store child objects
+    [SerializeField] private GameObject jtenemyPlantSpawner;
 
     //and then one more JT script in Start and a void called GetChild
     //
@@ -75,7 +76,7 @@ private void Awake()
 void Start()
 {
   Invoke("GetChildren" , 1f);
-        Invoke("SpawnInvoke", 2f);
+  Invoke("SpawnInvoke", 2f);
   isEnemySpawning = true;
 
     //start the main theme music
@@ -114,7 +115,7 @@ void CreateMissileEnemy()
         //spawn missile enemy
     tempEnemy = Instantiate(missileEnemyPreFab);
     tempEnemy.transform.position = childObjects[randomIndex].transform.position;
-        tempEnemy.GetComponent<Enemy>().weapon = missileWeapon;
+    tempEnemy.GetComponent<Enemy>().weapon = missileWeapon;
     tempEnemy.GetComponent<MissileEnemy>().SetMissileEnemy(2f);
 }
 
@@ -125,18 +126,26 @@ IEnumerator SpawnEnemy()
         CreateEnemy();
         CreateShootingEnemy();
         CreateMissileEnemy();
-        yield return new WaitForSeconds(enemySpawnRate);
+        JTSpawnPlant();
+            yield return new WaitForSeconds(enemySpawnRate);
     }
 }
+    void JTSpawnPlant()
+    {
+            int randomIndex = Random.Range(0, childObjects.Count);
+            //spawn missile enemy
+            tempEnemy = Instantiate(jtenemyPlantSpawner);
+            tempEnemy.transform.position = childObjects[randomIndex].transform.position;
+    }
 
-IEnumerator SpawnPowerup()
+    IEnumerator SpawnPowerup()
 {
     while (isEnemySpawning)
     {
             int randomIndex = Random.Range(0, childObjects.Count);
 
             tempPowerup = Instantiate(shootingPowerupPreFab);
-        tempPowerup.transform.position = childObjects[randomIndex].transform.position;
+            tempPowerup.transform.position = childObjects[randomIndex].transform.position;
             yield return new WaitForSeconds(powerupSpawnRate);
     }
 }
@@ -147,7 +156,7 @@ IEnumerator SpawnBomb()
     {
             int randomIndex = Random.Range(0, childObjects.Count);
 
-            tempPowerup = Instantiate(bombPreFab);
+        tempPowerup = Instantiate( bombPreFab);
         tempPowerup.transform.position = childObjects[randomIndex].transform.position;
         yield return new WaitForSeconds(bombSpawnRate);
     }

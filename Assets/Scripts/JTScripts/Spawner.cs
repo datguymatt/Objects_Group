@@ -10,5 +10,6 @@ using UnityEngine;
             // Spawn a new object based on the spawner's settings
             Instantiate(objectToSpawn, transform.position, Quaternion.identity);
         }
-    }
+
+}
 
