@@ -40,10 +40,10 @@ public class Weapon
         GameObject.Destroy(tempBullet.gameObject, _timeToDie);
     }
 
-    public void Shoot(Bullet _bullet, PlayableObject _player, string _target, float _timeToDie=5)
+    public void Shoot(Bullet _bullet, Transform _player, string _target, float _timeToDie=5)
     {
         _bullet.SetBullet(damage, _target, bulletSpeed, false);
-        Bullet tempBullet = GameObject.Instantiate(_bullet, new Vector3 (_player.transform.position.x, _player.transform.position.y, -0.11f), _player.transform.rotation);
+        Bullet tempBullet = GameObject.Instantiate(_bullet, new Vector3 (_player.position.x, _player.position.y, -0.11f), _player.rotation);
         //play sound
         
         //Debug.Log("Weapon is shooting");

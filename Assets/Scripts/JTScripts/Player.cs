@@ -18,6 +18,10 @@ public class Player : PlayableObject
 
     //firepoint
     [SerializeField] private Transform firePoint;
+        // JT Scripts, update the weapon shoot()function so that instead of passing a playableobject and then pulling its transform,
+        // just directly pull a transform in the weapon method, and then make that point the shooting spawn point
+        // in this script update Shoot() and ShootHold() to pass shootPoint instead of "this"
+    [SerializeField] private Transform shootPoint;
 
     [SerializeField]
     private AudioManager audioManager;
@@ -92,7 +96,7 @@ public class Player : PlayableObject
     public override void Shoot()
     {
         //where is this supposed to be called from?
-        weapon.Shoot(bulletPreFab, this, "Enemy");
+        weapon.Shoot(bulletPreFab, shootPoint, "Enemy");
         audioManager.PlaySFXAudio("player_laser_shoot");
     }
 
@@ -125,7 +129,7 @@ public class Player : PlayableObject
         while (isPowerupActive && Input.GetKey(KeyCode.Mouse0)) 
         {
             yield return new WaitForSeconds(bulletPowerupSpeed);
-            weapon.Shoot(bulletPreFab, this, "Enemy");
+            weapon.Shoot(bulletPreFab, shootPoint, "Enemy");
             audioManager.PlaySFXAudio("player_laser_shoot");
         }
         isShooting = false;
