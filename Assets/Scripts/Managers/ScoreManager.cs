@@ -14,6 +14,9 @@ public class ScoreManager : MonoBehaviour
     public static string quickFireTimer;
     public static int bombsInventory;
 
+    // Varibles that is used to count highscore
+    public static int newHigh;
+    public static int highScore;
     //UI overlay text
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI highschoreText;
@@ -66,9 +69,26 @@ public class ScoreManager : MonoBehaviour
         healthText.text = "Health: " + Mathf.RoundToInt(health).ToString();
         //highscore feature needed
 
+        // Assign a new high Score
+        UpdateHighScore();
+        highschoreText.text = "HighScore " + newHigh.ToString();
+
         //quickfire timer
         quickFireTimerText.text =  quickFireTimer;
         //bombs in Inventory can be checked for, and an image will be displayed for every one (max 4)
         CheckForBombs();
+    }
+    
+    // Update high score if new high score is better than previous one
+    private void UpdateHighScore()
+    {
+        highScore = score;
+        if(GameManager.gameIsFinished  == true)
+        {
+            if (newHigh <= highScore)
+            {
+                newHigh = highScore;
+            }
+        }
     }
 }
