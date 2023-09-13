@@ -843,6 +843,7 @@ MonoBehaviour:
   missileEnemyPreFab: {fileID: 3100639870944999846, guid: 23a0da981d0c6954086b12171cf6f076, type: 3}
   shootingPowerupPreFab: {fileID: 6038199064852841096, guid: 8d269ee9f181d9a43b2f53ba8d2e3aa6, type: 3}
   bombPreFab: {fileID: 8325272083011634676, guid: f412074a6e98f9745beb5e8ff6df1b5c, type: 3}
+  healthRegenPreFab: {fileID: 3153366253573612137, guid: 646c11136e9bb0446b7face509eb461b, type: 3}
   spawnPositions:
   - {fileID: 750320144}
   - {fileID: 2031129132}
@@ -865,6 +866,7 @@ MonoBehaviour:
   enemySpawnRate: 11.17
   powerupSpawnRate: 28.54
   bombSpawnRate: 54.44
+  healthRegenSpawnRate: 24.08
 --- !u!4 &699174943
 Transform:
   m_ObjectHideFlags: 0
@@ -997,6 +999,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a40a42c1ee4171458c1b666b62d25be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
   cam: {fileID: 2116670866}
   speed: 0
   weaponDamage: 25
@@ -1004,8 +1008,6 @@ MonoBehaviour:
   bulletPowerupSpeed: 0.1
   bulletPreFab: {fileID: 8834058540419301285, guid: d99bef0e2d6718d4aae771b647f50523, type: 3}
   bombPreFab: {fileID: 8185637823607736233, guid: f412074a6e98f9745beb5e8ff6df1b5c, type: 3}
-  maxHealthSet: 400
-  currentHealthSet: 400
   firePoint: {fileID: 2112273748}
   audioManager: {fileID: 1756295312}
   _hasBomb: 0
@@ -2478,7 +2480,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 612a0e601a16223498097ec72c8ea697, type: 3}
   - {fileID: 8300000, guid: 73e8f1db7a9168b459f44cc113fd08a9, type: 3}
   - {fileID: 8300000, guid: 85066bb7f1ce1d148b7efbe0165695f9, type: 3}
-  - {fileID: 8300000, guid: 5d87c66677ace2144b9353189656ea10, type: 3}
+  - {fileID: 8300000, guid: b1b25bbecaa86da4ea5d56a24585bea7, type: 3}
   musicClips:
   - {fileID: 8300000, guid: 1caa297ffb7bdaa408ac83c87537b811, type: 3}
 --- !u!1 &1779437549
