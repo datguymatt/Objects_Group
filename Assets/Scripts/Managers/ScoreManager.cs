@@ -7,8 +7,11 @@ using UnityEngine.UIElements;
 
 public class ScoreManager : MonoBehaviour
 {
+    // Varibles that is used to count highscore
+    public static int newHigh;
+    public static int highScore;
     //public values that are gloablly accessed and updated in Update()
-    public static int score;
+    public int score;
     public static int highschore;
     public static float health;
     public static string quickFireTimer;
@@ -61,6 +64,10 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Assign a new high Score
+        UpdateHighScore();
+        highschoreText.text = "HighScore " + newHigh.ToString();
+
         //update the UI with current globally accessible values
         scoreText.text = "Score " + score.ToString();
         healthText.text = "Health: " + Mathf.RoundToInt(health).ToString();
@@ -70,5 +77,18 @@ public class ScoreManager : MonoBehaviour
         quickFireTimerText.text =  quickFireTimer;
         //bombs in Inventory can be checked for, and an image will be displayed for every one (max 4)
         CheckForBombs();
+    }
+
+    // Update high score if new high score is better than previous one
+    private void UpdateHighScore()
+    {
+        highScore = score;
+        if (GameManager2.gameIsFinished == true)
+        {
+            if (newHigh <= highScore)
+            {
+                newHigh = highScore;
+            }
+        }
     }
 }

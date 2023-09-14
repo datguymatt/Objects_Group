@@ -1,10 +1,11 @@
 
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine;  
 
 public class GameManager2 : MonoBehaviour
 {
+    
     [Header("Game Enemies")]
     [SerializeField] private GameObject meleeEnemyPreFab;
     [SerializeField] private GameObject shootingEnemyPreFab;
@@ -40,6 +41,11 @@ public class GameManager2 : MonoBehaviour
     private Weapon shootingWeapon = new Weapon("Shooting Enemy Weapon", shootingEnemyDamage, shootingEnemyBulletSpeed);
     private Weapon missileWeapon = new Weapon("Missile Enemy Weapon", missileEnemyDamage, missileEnemyBulletSpeed);
 
+    // UI 
+    public GameObject Player;
+    public static bool gameIsFinished = false;
+    public static bool gameIsPaused = false;
+
     //instance
     private static GameManager2 instance;
 
@@ -67,6 +73,8 @@ public class GameManager2 : MonoBehaviour
 
     void Start()
     {
+        // Find the player
+        Player = GameObject.FindWithTag("Player");
         isEnemySpawning = true;
         StartCoroutine(SpawnEnemy());
         StartCoroutine(SpawnPowerup());
@@ -77,6 +85,10 @@ public class GameManager2 : MonoBehaviour
         audioManager.PlayMusicAudio("music_main");
     }
 
+    private void Update()
+    {
+        GameFlow();
+    }
     void CreateEnemy()
     {
         tempEnemy = Instantiate(meleeEnemyPreFab);
@@ -140,6 +152,17 @@ public class GameManager2 : MonoBehaviour
             tempPowerup = Instantiate(healthRegenPreFab);
             tempPowerup.transform.position = powerupSpawnPoints[Random.Range(0, powerupSpawnPoints.Length)].position;
             yield return new WaitForSeconds(healthRegenSpawnRate);
+        }
+    }
+    private void GameFlow()
+    {
+        if (Player == null)
+        {
+            gameIsFinished = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gameIsPaused = true;
         }
     }
 

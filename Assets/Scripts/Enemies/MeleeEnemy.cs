@@ -6,9 +6,10 @@ public class MeleeEnemy : Enemy
 {
 
     [SerializeField] private float meleeDamage = 25;
-
+    private ScoreManager scoreManager;
     protected override void Start()
     {
+        scoreManager = FindObjectOfType<ScoreManager>();
         //base is just the virtual class that it is inheriting from????
         base.Start();
         health = new Health(maxHealth, currentHealth);
@@ -32,7 +33,10 @@ public class MeleeEnemy : Enemy
 
     protected override void Update()
     {
-        Attack(target);
+        if(GameManager2.gameIsFinished == false)
+        {
+            Attack(target);
+        }
     }
 
     public override void Attack(Transform target)
@@ -43,6 +47,6 @@ public class MeleeEnemy : Enemy
     public override void Die()
     {
         base.Die();
-        ScoreManager.score += 10;
+        scoreManager.score += 10;
     }
 }

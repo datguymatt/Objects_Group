@@ -11,9 +11,11 @@ public class MissileEnemy : Enemy
     [SerializeField] protected Bullet bulletPreFab;
 
     [SerializeField] protected float bulletDamage;
+    private ScoreManager scoreManager;
 
     protected override void Start()
     {
+        scoreManager = FindObjectOfType<ScoreManager>();
         base.Start();
         health = new Health(maxHealth, currentHealth);
         weapon = new Weapon("Missile Enemy Weapon", bulletDamage, bulletSpeed);
@@ -25,11 +27,14 @@ public class MissileEnemy : Enemy
     }
     protected override void Update()
     {
-        base.Update();
-        //move while not in the player perimeter
-        Vector2 direction = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
-        transform.right = direction;
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        if (GameManager2.gameIsFinished == false)
+        {
+            base.Update();
+            //move while not in the player perimeter
+            Vector2 direction = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
+            transform.right = direction;
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        }
     }
     public void SetMissileEnemy(float _attackTime)
     {
@@ -57,6 +62,6 @@ public class MissileEnemy : Enemy
     public override void Die()
     {
         base.Die();
-        ScoreManager.score += 50;
+        scoreManager.score += 50;
     }
 }
