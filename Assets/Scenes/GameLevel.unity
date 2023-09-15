@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenuUI: {fileID: 7688479480632651406}
-  Menu: ObjectsMenu
+  Menu: MainMenu
 --- !u!114 &381462837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2291,7 +2291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8dfec20108e4c74f9f9a866c2db5481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuName: ObjectsMenu
+  MenuName: MainMenu
   HighScoreValue: {fileID: 6519754777244536158}
   HighScoreText: {fileID: 3790031570240885539}
   PauseMenuUI: {fileID: 7688479480632651406}
