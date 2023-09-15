@@ -156,7 +156,7 @@ public class Player : PlayableObject
             //kill all enemies
             foreach (GameObject g in GameObject.FindGameObjectsWithTag("Enemy"))
             {
-                Destroy(g);
+                g.GetComponent<Enemy>().Die();
             }
             yield return new WaitForSeconds(0.5f);
             Destroy(tempBomb.gameObject);
