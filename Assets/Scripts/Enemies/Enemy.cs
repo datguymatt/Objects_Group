@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Enemy : PlayableObject
 {
+    private EnemyType enemyType;
+
     protected Transform target; 
 
     [SerializeField] protected float speed;
     [SerializeField] protected float weaponDamage;
-    
 
     protected AudioManager audioManager;
 
@@ -24,11 +25,7 @@ public class Enemy : PlayableObject
     protected virtual void Update()
     {
         ////rotate towards player
-        if (GameManager2.gameIsFinished == false) 
-        {
-            target = GameObject.FindWithTag("Player").transform;
-            transform.LookAt(target);
-        }
+        target = GameObject.FindWithTag("Player").transform;
     }
     public override void Move(Vector2 direction, Vector2 target)
     {}
@@ -43,7 +40,9 @@ public class Enemy : PlayableObject
     }
     public override void Move(float speed)
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        Vector2 direction = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
+        transform.right = direction;
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
 
     public override void Shoot()
@@ -57,6 +56,11 @@ public class Enemy : PlayableObject
 
     public override void Attack(Transform target)
     {}
+
+    public void SetEnemyType(EnemyType enemyType)
+    {
+        this.enemyType = enemyType;
+    }
 
     public override void GetDamage(float damage)
     {

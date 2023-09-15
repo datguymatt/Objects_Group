@@ -49,7 +49,7 @@ public class Player : PlayableObject
         maxHealth = 200;
         currentHealth = 200;
         //set player health
-        health = new Health(maxHealth, currentHealth);
+        health = new Health(maxHealth,10, currentHealth);
 
         //Set The Player Weapon
         Debug.Log(weaponDamage + "is your wepaon damage");
@@ -156,7 +156,8 @@ public class Player : PlayableObject
             //kill all enemies
             foreach (GameObject g in GameObject.FindGameObjectsWithTag("Enemy"))
             {
-                Destroy(g);
+                
+                g.GetComponent<Enemy>().Die();
             }
             yield return new WaitForSeconds(0.5f);
             Destroy(tempBomb.gameObject);

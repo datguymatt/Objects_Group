@@ -12,14 +12,12 @@ public class ShootingEnemy : Enemy
     [SerializeField] protected Bullet bulletPreFab;
 
     [SerializeField] protected float bulletDamage;
-    private ScoreManager scoreManager;
-
 
     protected override void Start()
     {
-        scoreManager = FindObjectOfType<ScoreManager>();
+        
         base.Start();
-        health = new Health(maxHealth, currentHealth);
+        health = new Health(200, 0, 200);
         weapon = new Weapon("Shooting Enemy Weapon", bulletDamage, bulletSpeed);
     }
 
@@ -29,14 +27,10 @@ public class ShootingEnemy : Enemy
     }
     protected override void Update()
     {
-        if (GameManager2.gameIsFinished == false)
-        {
-            base.Update();
-            Vector2 direction = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
-            transform.right = direction;
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-        }
-
+        base.Update();
+        Vector2 direction = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
+        transform.right = direction;
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
     public void SetShootingEnemy(float _attackTime)
     {
@@ -72,7 +66,7 @@ public class ShootingEnemy : Enemy
     public override void Die()
     {
         base.Die();
-        scoreManager.score += 50;
+        ScoreManager.score += 50;
     }
 
 

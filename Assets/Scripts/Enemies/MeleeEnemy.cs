@@ -6,13 +6,12 @@ public class MeleeEnemy : Enemy
 {
 
     [SerializeField] private float meleeDamage = 25;
-    private ScoreManager scoreManager;
+
     protected override void Start()
     {
-        scoreManager = FindObjectOfType<ScoreManager>();
         //base is just the virtual class that it is inheriting from????
         base.Start();
-        health = new Health(maxHealth, currentHealth);
+        health = new Health(50, 0, 50);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -33,10 +32,10 @@ public class MeleeEnemy : Enemy
 
     protected override void Update()
     {
-        if(GameManager2.gameIsFinished == false)
-        {
-            Attack(target);
-        }
+        Attack(target);
+        Vector2 direction = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
+        transform.right = direction;
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
 
     public override void Attack(Transform target)
@@ -47,6 +46,6 @@ public class MeleeEnemy : Enemy
     public override void Die()
     {
         base.Die();
-        scoreManager.score += 10;
+        ScoreManager.score += 10;
     }
 }

@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
     public static int newHigh;
     public static int highScore;
     //public values that are gloablly accessed and updated in Update()
-    public int score;
+    public static int score;
     public static int highschore;
     public static float health;
     public static string quickFireTimer;

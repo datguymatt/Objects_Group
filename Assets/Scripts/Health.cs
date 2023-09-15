@@ -6,6 +6,8 @@ public class Health
     private float currentHealth;
     private float maxHealth;
 
+    private float healthRegenRate;
+
 
     public float GetHealth()
     {
@@ -18,10 +20,10 @@ public class Health
 
         currentHealth = value;
     }
-    public Health(float _maxHealth, float _currentHealth)
+    public Health(float _maxHealth, float _healthRegenRate, float _currentHealth)
     {
         maxHealth = _maxHealth;
-        
+        healthRegenRate = _healthRegenRate;
         currentHealth = _currentHealth;
     }
 
@@ -35,21 +37,12 @@ public class Health
     public void RegenHealth()
     {
         //this is currently not being used
-        //
+        AddHealth(healthRegenRate * Time.deltaTime);
     }
 
     public void AddHealth(float value)
     {
-        if ((currentHealth + value) > maxHealth)
-        {
-            //only set to max, don't let it exceed
-            currentHealth = maxHealth;
-        } else
-        {
-            //otherwise, add it!
-            currentHealth += value;
-        }
-        ScoreManager.health = currentHealth;
+        currentHealth = Mathf.Max(currentHealth, currentHealth + value);
     }
     public virtual void DeductHealth(float amount)
     {

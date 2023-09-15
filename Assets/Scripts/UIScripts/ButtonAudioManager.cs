@@ -11,7 +11,7 @@ public class ButtonAudioManager : MonoBehaviour
 
     public void HoverSound()
     {
-        buttonFx.PlayOneShot (hoverFx);
+        buttonFx.PlayOneShot(hoverFx);
     }
     public void ClickSound()
     {
