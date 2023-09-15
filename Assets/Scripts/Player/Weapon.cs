@@ -1,7 +1,6 @@
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Weapon
 {
