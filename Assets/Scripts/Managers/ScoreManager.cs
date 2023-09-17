@@ -7,12 +7,12 @@ using UnityEngine.UIElements;
 
 public class ScoreManager : MonoBehaviour
 {
-    // Varibles that is used to count highscore
+    // Varibles that is used to work with highscore
     public static int newHigh;
     public static int highScore;
+    public int score;
+
     //public values that are gloablly accessed and updated in Update()
-    public static int score;
-    public static int highschore;
     public static float health;
     public static string quickFireTimer;
     public static int bombsInventory;
@@ -83,7 +83,7 @@ public class ScoreManager : MonoBehaviour
     private void UpdateHighScore()
     {
         highScore = score;
-        if (GameManager2.gameIsFinished == true)
+        if (GameManager.gameIsFinished == true)
         {
             if (newHigh <= highScore)
             {

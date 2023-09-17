@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class JTEnemyPlantSpawner : Enemy
 {
@@ -12,8 +13,15 @@ public class JTEnemyPlantSpawner : Enemy
     [SerializeField] private GameObject bearPrefab;
     private Spawner spawner;
 
+    // Finding ScoreManager
+    ScoreManager scoreManager;
+
     protected override void Start()
     {
+        // Finding ScoreManager
+        scoreManager = FindObjectOfType<ScoreManager>();
+
+        // Enemy Start
         animationController = GetComponent<Animator>();
         base.Start();
         health = new Health(100, 0, 100);
@@ -54,7 +62,7 @@ public class JTEnemyPlantSpawner : Enemy
     public override void Die()
     {
         base.Die();
-        ScoreManager.score += 50;
+        scoreManager.score += 50;
     }
 
 

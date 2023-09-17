@@ -9,9 +9,12 @@ public class Bomb : MonoBehaviour
     public ParticleSystem explosion;
     public bool thrown;
     private float bombSpeed = 0.1f;
-    // Start is called before the first frame update
+
+    public Player player;
+
     public void Awake()
     {
+        player = FindFirstObjectByType<Player>();    
         explosion = GetComponentInChildren<ParticleSystem>();
         explosion.Stop();
     }
@@ -19,7 +22,6 @@ public class Bomb : MonoBehaviour
     private void Update()
     {
     }
-
     public Bomb SetBomb(bool _isActiveInventory)
     {
         isActiveInventory = _isActiveInventory;
@@ -27,13 +29,13 @@ public class Bomb : MonoBehaviour
         return this;
     }
 
-    // Update is called once per frame
+    /// Refacroting in progress
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && isActiveInventory)
         {
-            Player player = collision.GetComponent<Player>();
-            player._hasBomb = true;
+            player = collision.GetComponent<Player>();
+            Player._hasBomb = true;
             ScoreManager.bombsInventory++;
             Destroy(gameObject);
 

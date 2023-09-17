@@ -1,15 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MeleeEnemy : Enemy
 {
 
     [SerializeField] private float meleeDamage = 25;
+    // Finding ScoreManager
+    ScoreManager scoreManager;
 
     protected override void Start()
     {
-        //base is just the virtual class that it is inheriting from????
+        // Finding ScoreManager
+        scoreManager = FindObjectOfType<ScoreManager>();
+
+        // Enemy Start
         base.Start();
         health = new Health(50, 0, 50);
     }
@@ -32,10 +38,13 @@ public class MeleeEnemy : Enemy
 
     protected override void Update()
     {
-        Attack(target);
-        Vector2 direction = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
-        transform.right = direction;
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        if(target != null)
+        {
+            Attack(target); 
+            Vector2 direction = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
+            transform.right = direction;
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        }
     }
 
     public override void Attack(Transform target)
@@ -46,6 +55,6 @@ public class MeleeEnemy : Enemy
     public override void Die()
     {
         base.Die();
-        ScoreManager.score += 10;
+        scoreManager.score += 10;
     }
 }

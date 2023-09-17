@@ -24,7 +24,10 @@ public class Enemy : PlayableObject
     protected virtual void Update()
     {
         ////rotate towards player
-        target = GameObject.FindWithTag("Player").transform;
+        if (target != null) 
+        {
+            target = GameObject.FindWithTag("Player").transform;
+        }
     }
     public override void Move(Vector2 direction, Vector2 target)
     {}

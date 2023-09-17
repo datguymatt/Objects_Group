@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MissileEnemy : Enemy
 {
@@ -12,8 +13,14 @@ public class MissileEnemy : Enemy
 
     [SerializeField] protected float bulletDamage;
 
+    // Finding ScoreManager
+    ScoreManager scoreManager;
     protected override void Start()
     {
+        // Finding ScoreManager
+        scoreManager = FindObjectOfType<ScoreManager>();
+
+        // Enemy Start
         base.Start();
         health = new Health(200, 0, 200);
         weapon = new Weapon("Missile Enemy Weapon", bulletDamage, bulletSpeed);
@@ -25,11 +32,14 @@ public class MissileEnemy : Enemy
     }
     protected override void Update()
     {
-        base.Update();
-        //move while not in the player perimeter
-        Vector2 direction = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
-        transform.right = direction;
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        if(target != null) 
+        {
+            base.Update();
+            //move while not in the player perimeter
+            Vector2 direction = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
+            transform.right = direction;
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        }
     }
     public void SetMissileEnemy(float _attackTime)
     {
@@ -57,6 +67,6 @@ public class MissileEnemy : Enemy
     public override void Die()
     {
         base.Die();
-        ScoreManager.score += 50;
+        scoreManager.score += 50;
     }
 }

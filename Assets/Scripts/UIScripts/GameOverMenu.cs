@@ -18,19 +18,19 @@ public class GameOverMenu : MonoBehaviour
     public GameObject FinishMenuUI;
     public GameObject OverlayUI;
 
-    public GameObject GamePlay;
     // This varibles assigned at the start of the game
-
+    public GameManager gameManager;
     public ScoreManager scoreManager;
 
     private void Awake()
     {
-        // Finds ScoreManager and Player
+        // Finds ScoreManager and GameManager 
+        gameManager = FindObjectOfType<GameManager>(); 
         scoreManager = FindObjectOfType<ScoreManager>();
     }
     private void Update()
     {
-        // This function  Pause Game
+        // This function happens when the game is finished
         GameFinishFunction();
     }
 
@@ -38,7 +38,7 @@ public class GameOverMenu : MonoBehaviour
     // Check if the current Score is higher than previous one.
     private void GameFinishFunction()
     {
-        if (GameManager2.gameIsFinished == true)
+        if (GameManager.gameIsFinished == true)
         {
             Time.timeScale = 0f;
             // Making sure PauseMenu is disabled
@@ -61,9 +61,9 @@ public class GameOverMenu : MonoBehaviour
     // Restart Button Function 
     public void Restart()
     {
-        Destroy(GamePlay);
-        GameManager2.gameIsFinished = false;
+        Destroy(gameManager);
         Time.timeScale = 1f;
+        GameManager.gameIsFinished = false;
         FinishMenuUI.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -77,8 +77,8 @@ public class GameOverMenu : MonoBehaviour
     // MainMenu Button Function
     public void GoToMenu()
     {
-        Destroy(GamePlay);
-        GameManager2.gameIsFinished = false;
+        Destroy(gameManager);
+        GameManager.gameIsFinished = false;
         Time.timeScale = 1f;
         FinishMenuUI.SetActive(false);
         SceneManager.LoadScene(MenuName);

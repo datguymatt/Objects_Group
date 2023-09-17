@@ -33,13 +33,6 @@ public class Health
     }
     public Health()
     {}
-
-    public void RegenHealth()
-    {
-        //this is currently not being used
-        AddHealth(healthRegenRate * Time.deltaTime);
-    }
-
     public void AddHealth(float value)
     {
         currentHealth = Mathf.Max(currentHealth, currentHealth + value);

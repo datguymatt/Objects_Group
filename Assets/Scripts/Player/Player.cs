@@ -26,8 +26,10 @@ public class Player : PlayableObject
     private bool isShooting = false;
 
 
+    // bomb check
+    public static bool _hasBomb = false;
+
     // bomb stuff
-    public bool _hasBomb = false;
     public bool isActiveInventory;
     [SerializeField] private float bombFuseTime = 2;
     [SerializeField] private float bombShootSpeed;
@@ -156,7 +158,6 @@ public class Player : PlayableObject
             //kill all enemies
             foreach (GameObject g in GameObject.FindGameObjectsWithTag("Enemy"))
             {
-                
                 g.GetComponent<Enemy>().Die();
             }
             yield return new WaitForSeconds(0.5f);

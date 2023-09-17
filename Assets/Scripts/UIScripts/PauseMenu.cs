@@ -19,17 +19,17 @@ public class PauseMenu : MonoBehaviour
     // Restart Button Function 
     public void Resume()
     {   
-        GameManager2.gameIsPaused = false;
+        GameManager.gameIsPaused = false;
     }
     // Pause Function
     private void Pause()
     {
-        if(GameManager2.gameIsPaused == true)
+        if(GameManager.gameIsPaused == true)
         {
             Time.timeScale = 0f;
             PauseMenuUI.SetActive(true);
         }
-        if(GameManager2.gameIsPaused == false)
+        if(GameManager.gameIsPaused == false)
         {
             Time.timeScale = 1f;
             PauseMenuUI.SetActive(false);
