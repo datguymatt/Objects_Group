@@ -19,7 +19,7 @@ public class GameOverMenu : MonoBehaviour
     public GameObject OverlayUI;
 
     // This varibles assigned at the start of the game
-    public GameManager gameManager;
+    private GameManager gameManager;
     public ScoreManager scoreManager;
 
     private void Awake()

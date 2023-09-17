@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject PauseMenuUI;
-    [SerializeField] public string Menu; 
+    [SerializeField] public string Menu;
+    private GameManager gameManager;
 
     private void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         Resume();
     }
     private void Update()
@@ -43,6 +45,10 @@ public class PauseMenu : MonoBehaviour
     // MainMenu Button Function
     public void GoToMenu()
     {
+        Destroy(gameManager);
+        GameManager.gameIsFinished = false;
+        Time.timeScale = 1f;
+        PauseMenuUI.SetActive(false);
         SceneManager.LoadScene(Menu);
 
     }
