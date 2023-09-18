@@ -8,7 +8,7 @@ public class Bomb : MonoBehaviour
     private bool isFirstTime;
     public ParticleSystem explosion;
     public bool thrown;
-    private float bombSpeed = 0.1f;
+    //private float bombSpeed = 0.1f;
 
     public Player player;
 
