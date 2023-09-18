@@ -1803,7 +1803,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 269.8, y: 189.3}
+  m_AnchoredPosition: {x: 163.2, y: 125.2}
   m_SizeDelta: {x: 49.169556, y: 24.584778}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1056760055
@@ -2582,6 +2582,7 @@ MonoBehaviour:
   enemySpawnRate: 10
   powerupSpawnRate: 15
   bombSpawnRate: 60
+  Player: {fileID: 0}
 --- !u!4 &1357641333
 Transform:
   m_ObjectHideFlags: 0
@@ -2710,6 +2711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4755f479b8454bc43b144969fdb7eb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
   scoreText: {fileID: 483889110}
   highschoreText: {fileID: 2094278322}
   healthText: {fileID: 1779437551}
@@ -2771,7 +2773,6 @@ MonoBehaviour:
   PauseMenuUI: {fileID: 7688479480632651406}
   FinishMenuUI: {fileID: 3790031568678077126}
   OverlayUI: {fileID: 1291278642}
-  GamePlay: {fileID: 0}
   scoreManager: {fileID: 1416477248}
 --- !u!114 &1471806131
 MonoBehaviour:
@@ -3760,7 +3761,6 @@ MonoBehaviour:
   bombPreFab: {fileID: 8185637823607736233, guid: f412074a6e98f9745beb5e8ff6df1b5c, type: 3}
   firePoint: {fileID: 1788230720}
   audioManager: {fileID: 1756295312}
-  _hasBomb: 0
   isActiveInventory: 0
   bombFuseTime: 2
   bombShootSpeed: 3000
