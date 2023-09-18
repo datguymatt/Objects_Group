@@ -33,7 +33,6 @@ public class JTEnemyPlantSpawner : Enemy
     public override void GetDamage(float damage)
     {
         base.GetDamage(damage);
-        animationController.Play("PlantDamaged");
         ///ClearDamageAnim();
 
     }
