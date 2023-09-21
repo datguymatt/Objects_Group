@@ -22,7 +22,8 @@ public class MissileEnemy : Enemy
         scoreManager = FindObjectOfType<ScoreManager>();
 
         //dif
-        bulletDamage = bulletDamage + difficultyIncrease;
+        GetDifficultyManager();
+        bulletDamage = bulletDamage + dM.difficultyInc;
 
         // Enemy Start
         base.Start();

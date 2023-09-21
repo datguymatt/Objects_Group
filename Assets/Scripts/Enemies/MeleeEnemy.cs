@@ -13,7 +13,8 @@ public class MeleeEnemy : Enemy
         scoreManager = FindObjectOfType<ScoreManager>();
 
         //dif
-        meleeDamage = meleeDamage + difficultyIncrease;
+        GetDifficultyManager();
+        meleeDamage = meleeDamage + dM.difficultyInc;
 
         // Enemy Start
         base.Start();

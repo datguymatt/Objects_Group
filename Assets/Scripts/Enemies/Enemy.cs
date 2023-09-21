@@ -12,14 +12,15 @@ public class Enemy : PlayableObject
 
     protected AudioManager audioManager;
 
-    public int difficultyIncrease = 0;
+    public DifficultyManager dM;
+    public GameObject difficultyManager;
 
     protected virtual void Start()
     {
         //find the player in the menu - this is the eternal target for the enemies
         //assign that position to the Transform object variable
         target = GameObject.FindWithTag("Player").transform;
-        
+        GetDifficultyManager();
         audioManager = FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
     }
 
@@ -80,5 +81,10 @@ public class Enemy : PlayableObject
         {
             Die();
         }
+    }
+    public void GetDifficultyManager()
+    {
+        difficultyManager = GameObject.Find("DifficultyManager");
+        dM = difficultyManager.GetComponent<DifficultyManager>();
     }
 }
