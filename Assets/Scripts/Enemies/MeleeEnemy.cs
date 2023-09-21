@@ -12,6 +12,9 @@ public class MeleeEnemy : Enemy
         // Finding ScoreManager
         scoreManager = FindObjectOfType<ScoreManager>();
 
+        //dif
+        meleeDamage = meleeDamage + difficultyIncrease;
+
         // Enemy Start
         base.Start();
         health = new Health(50, 0, 50);

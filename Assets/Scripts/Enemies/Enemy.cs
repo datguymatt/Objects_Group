@@ -12,6 +12,8 @@ public class Enemy : PlayableObject
 
     protected AudioManager audioManager;
 
+    public int difficultyIncrease = 0;
+
     protected virtual void Start()
     {
         //find the player in the menu - this is the eternal target for the enemies

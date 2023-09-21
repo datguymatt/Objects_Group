@@ -21,6 +21,9 @@ public class ShootingEnemy : Enemy
         // Finding ScoreManager
         scoreManager = FindObjectOfType<ScoreManager>();
 
+        //dif
+        bulletDamage = bulletDamage + difficultyIncrease;
+
         // Enemy Start
         base.Start();
         health = new Health(200, 0, 200);

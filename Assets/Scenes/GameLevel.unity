@@ -422,6 +422,56 @@ TrailRenderer:
   m_MinVertexDistance: 1.89
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!1 &293081529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 293081531}
+  - component: {fileID: 293081530}
+  m_Layer: 0
+  m_Name: DifficultyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &293081530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293081529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a0656aff3140e42bdadf2f9f50723b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missleEnemy: {fileID: 3018916540843261502, guid: 02a468126fe73ad4fae2dc10b4dcb37c, type: 3}
+  meleeEnemy: {fileID: 7609634767764105852, guid: 456d12ee6843f504bae29840f732a0c3, type: 3}
+  shooter: {fileID: 6490521292148653183, guid: 3ee99fe339a725045a9e5b308aa80396, type: 3}
+  gameManager: {fileID: 1357641332}
+  scoreManager: {fileID: 1416477248}
+  score: 0
+--- !u!4 &293081531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293081529}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 466.98715, y: 318.55063, z: -1.8380361}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &357450504
 GameObject:
   m_ObjectHideFlags: 0
