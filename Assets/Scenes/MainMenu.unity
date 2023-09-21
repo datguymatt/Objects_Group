@@ -1610,7 +1610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
-  speedRate: 0.01
+  speedRate: 0.004
   colorDissolve: {fileID: -9015235361088974288, guid: 853a000c41553804fb32602b4b1738b1, type: 2}
 --- !u!1 &1140506436
 GameObject:
