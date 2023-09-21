@@ -168,6 +168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bad911f9a7d8be543acc35ad2244cedf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 30
+  currentHealth: 30
   speed: 0
   weaponDamage: 0
   spawnTime: 5

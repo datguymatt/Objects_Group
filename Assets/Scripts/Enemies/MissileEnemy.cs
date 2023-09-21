@@ -66,7 +66,7 @@ public class MissileEnemy : Enemy
 
     public override void Die()
     {
-        base.Die();
         scoreManager.score += 50;
+        base.Die();
     }
 }

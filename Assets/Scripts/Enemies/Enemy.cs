@@ -64,6 +64,11 @@ public class Enemy : PlayableObject
         this.enemyType = enemyType;
     }
 
+    public override void Die()
+    { 
+        base.Die();
+    }
+
     public override void GetDamage(float damage)
     {
         health.DeductHealth(damage);

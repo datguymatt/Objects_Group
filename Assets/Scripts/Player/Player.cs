@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Player : PlayableObject
@@ -158,7 +157,20 @@ public class Player : PlayableObject
             //kill all enemies
             foreach (GameObject g in GameObject.FindGameObjectsWithTag("Enemy"))
             {
-                g.GetComponent<Enemy>().Die();
+                if(g.gameObject.name == "Bullet(Clone)")
+                {
+                    //do nothing
+                    Debug.Log("this is not an enemy");
+                }
+                else
+                {
+                    Debug.Log("I'm about to destroy" + g.gameObject.name);
+                    if (g.gameObject.name != "Sprite")
+                    {
+                        g.GetComponent<Enemy>().Die();
+                    }
+                    Debug.Log("successfully destroyed" + g.gameObject.name);
+                }
             }
             yield return new WaitForSeconds(0.5f);
             Destroy(tempBomb.gameObject);
