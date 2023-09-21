@@ -12,12 +12,13 @@ public class GameManager : MonoBehaviour
     //powerup prefabs
     [SerializeField] private GameObject shootingPowerupPreFab;
     [SerializeField] private GameObject bombPreFab;
+    [SerializeField] private GameObject healthRegenPreFab;
     //spawns
     //[SerializeField] private Transform[] spawnPositions;
     //[SerializeField] private Transform[] powerupSpawnPoints;
 
-        // JT SCRIPTS
-        [SerializeField] private GameObject parentGameObject;
+    // JT SCRIPTS
+    [SerializeField] private GameObject parentGameObject;
         [SerializeField] private List<GameObject> childObjects = new List<GameObject>(); // List to store child objects
         [SerializeField] private GameObject jtenemyPlantSpawner;
 
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float enemySpawnRate;
     [SerializeField] private float powerupSpawnRate;
     [SerializeField] private float bombSpawnRate;
+    [SerializeField] private float healthRegenSpawnRate;
 
     //temp stuff
     private GameObject tempEnemy;
@@ -100,6 +102,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(SpawnEnemy());
             StartCoroutine(SpawnPowerup());
             StartCoroutine(SpawnBomb());
+            StartCoroutine(SpawnHealthRegen());
         }
         void CreateEnemy()
         {
@@ -171,7 +174,18 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(bombSpawnRate);
         }
     }
-    //JTScripts
+    IEnumerator SpawnHealthRegen()
+    {
+        while (isEnemySpawning)
+        {
+            int randomIndex = Random.Range(0, childObjects.Count);
+
+            tempPowerup = Instantiate(healthRegenPreFab);
+            tempPowerup.transform.position = childObjects[randomIndex].transform.position;
+            yield return new WaitForSeconds(healthRegenSpawnRate);
+        }
+    }
+    //JT
     void GetChildren()
     {
         if (parentGameObject != null)

@@ -49,7 +49,7 @@ public class GameOverMenu : MonoBehaviour
 
             if(ScoreManager.newHigh == ScoreManager.highScore)
             {
-                HighScoreText.text = "New Best SCORE";
+                HighScoreText.text = "New High SCORE";
             }
             else
             {

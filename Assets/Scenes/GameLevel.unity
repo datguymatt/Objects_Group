@@ -454,9 +454,7 @@ MonoBehaviour:
   missleEnemy: {fileID: 3018916540843261502, guid: 02a468126fe73ad4fae2dc10b4dcb37c, type: 3}
   meleeEnemy: {fileID: 7609634767764105852, guid: 456d12ee6843f504bae29840f732a0c3, type: 3}
   shooter: {fileID: 6490521292148653183, guid: 3ee99fe339a725045a9e5b308aa80396, type: 3}
-  gameManager: {fileID: 1357641332}
-  scoreManager: {fileID: 1416477248}
-  score: 0
+  difficultyInc: 0
 --- !u!4 &293081531
 Transform:
   m_ObjectHideFlags: 0
@@ -2253,12 +2251,14 @@ MonoBehaviour:
   missileEnemyPreFab: {fileID: 3018916540843261502, guid: 02a468126fe73ad4fae2dc10b4dcb37c, type: 3}
   shootingPowerupPreFab: {fileID: 6038199064852841096, guid: 8d269ee9f181d9a43b2f53ba8d2e3aa6, type: 3}
   bombPreFab: {fileID: 8325272083011634676, guid: f412074a6e98f9745beb5e8ff6df1b5c, type: 3}
+  healthRegenPreFab: {fileID: 3153366253573612137, guid: 646c11136e9bb0446b7face509eb461b, type: 3}
   parentGameObject: {fileID: 1499302070}
   childObjects: []
   jtenemyPlantSpawner: {fileID: 3871584041353469357, guid: c8dfe18c3bae395439472834a728bc21, type: 3}
   enemySpawnRate: 10
   powerupSpawnRate: 15
   bombSpawnRate: 60
+  healthRegenSpawnRate: 20
   Player: {fileID: 0}
 --- !u!4 &1357641333
 Transform:
@@ -4986,7 +4986,7 @@ MonoBehaviour:
   m_text: QUIT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 853a000c41553804fb32602b4b1738b1, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: f29842e11ac9aa040994ac646d7ac4d6, type: 2}
+  m_sharedMaterial: {fileID: -9015235361088974288, guid: 853a000c41553804fb32602b4b1738b1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5103,7 +5103,7 @@ MonoBehaviour:
   m_text: MAIN MENU
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 853a000c41553804fb32602b4b1738b1, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: f29842e11ac9aa040994ac646d7ac4d6, type: 2}
+  m_sharedMaterial: {fileID: -9015235361088974288, guid: 853a000c41553804fb32602b4b1738b1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5517,7 +5517,7 @@ MonoBehaviour:
     HIGH SCORE'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 853a000c41553804fb32602b4b1738b1, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: f29842e11ac9aa040994ac646d7ac4d6, type: 2}
+  m_sharedMaterial: {fileID: -9015235361088974288, guid: 853a000c41553804fb32602b4b1738b1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5652,7 +5652,7 @@ MonoBehaviour:
   m_text: RESTART
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 853a000c41553804fb32602b4b1738b1, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: f29842e11ac9aa040994ac646d7ac4d6, type: 2}
+  m_sharedMaterial: {fileID: -9015235361088974288, guid: 853a000c41553804fb32602b4b1738b1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
