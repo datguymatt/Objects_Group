@@ -32,8 +32,8 @@ public class DifficultyManager : MonoBehaviour
     {
         while (isPlaying)
         {
+            yield return new WaitForSeconds(15);
             DifficultyIncrease();
-            yield return new WaitForSeconds(7);
         }
         
     }

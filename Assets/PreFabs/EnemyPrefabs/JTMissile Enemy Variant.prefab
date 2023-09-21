@@ -103,10 +103,12 @@ MonoBehaviour:
   currentHealth: 20
   speed: 2
   weaponDamage: 30
+  dM: {fileID: 0}
+  difficultyManager: {fileID: 0}
   attackTime: 1.8
   bulletSpeed: 7.14
   bulletPreFab: {fileID: 8205543971710972059, guid: 31c9ea921e9433549aa3bd4cce1201c2, type: 3}
-  bulletDamage: 30
+  bulletDamage: 15
 --- !u!58 &7239947236716099596
 CircleCollider2D:
   m_ObjectHideFlags: 0

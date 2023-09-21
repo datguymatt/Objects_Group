@@ -28,6 +28,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private GameObject bomb2;
     [SerializeField] private GameObject bomb3;
     [SerializeField] private GameObject bomb4;
+   
 
     private void CheckForBombs()
     {
@@ -60,7 +61,7 @@ public class ScoreManager : MonoBehaviour
 
         }
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -70,6 +71,7 @@ public class ScoreManager : MonoBehaviour
 
         //update the UI with current globally accessible values
         scoreText.text = "Score " + score.ToString();
+       
         healthText.text = "Health: " + Mathf.RoundToInt(health).ToString();
         //highscore feature needed
 
@@ -90,5 +92,9 @@ public class ScoreManager : MonoBehaviour
                 newHigh = highScore;
             }
         }
+    }
+    public void UpdateHealth()
+    {
+        healthText.text = "Health: " + Mathf.RoundToInt(health).ToString();
     }
 }

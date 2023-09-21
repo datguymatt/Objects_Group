@@ -89,6 +89,7 @@ public class Player : PlayableObject
                 ScoreManager.bombsInventory--;
             }
         }
+        
     }
 
     public override void Shoot()
@@ -175,4 +176,5 @@ public class Player : PlayableObject
             yield return new WaitForSeconds(0.5f);
             Destroy(tempBomb.gameObject);
     }
+    
 }

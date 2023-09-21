@@ -104,7 +104,9 @@ MonoBehaviour:
   currentHealth: 30
   speed: 1
   weaponDamage: 0
-  meleeDamage: 25
+  dM: {fileID: 0}
+  difficultyManager: {fileID: 0}
+  meleeDamage: 20
 --- !u!61 &772781006069322527
 BoxCollider2D:
   m_ObjectHideFlags: 0
