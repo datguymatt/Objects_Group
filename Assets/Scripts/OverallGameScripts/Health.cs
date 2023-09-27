@@ -11,6 +11,7 @@ public class Health
 
     public float GetHealth()
     {
+      
         return currentHealth;
     }
     public void SetHealth(float value)
@@ -35,6 +36,7 @@ public class Health
     {}
     public void AddHealth(float value)
     {
+        
         currentHealth = Mathf.Max(currentHealth, currentHealth + value);
     }
     public virtual void DeductHealth(float amount)

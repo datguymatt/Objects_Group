@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//why is this an abstract class?
-//understand its purpose
 public abstract class PlayableObject : MonoBehaviour, IDamageable
 {
     public Health health = new Health();
@@ -45,5 +43,7 @@ public abstract class PlayableObject : MonoBehaviour, IDamageable
         {
             Die();
         }
+        
     }
+    
 }

@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MeleeEnemy : Enemy
 {
@@ -14,6 +11,10 @@ public class MeleeEnemy : Enemy
     {
         // Finding ScoreManager
         scoreManager = FindObjectOfType<ScoreManager>();
+
+        //dif
+        GetDifficultyManager();
+        meleeDamage = meleeDamage + dM.difficultyInc;
 
         // Enemy Start
         base.Start();
@@ -54,7 +55,7 @@ public class MeleeEnemy : Enemy
 
     public override void Die()
     {
-        base.Die();
         scoreManager.score += 10;
+        base.Die();
     }
 }

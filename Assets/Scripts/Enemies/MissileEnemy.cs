@@ -15,10 +15,15 @@ public class MissileEnemy : Enemy
 
     // Finding ScoreManager
     ScoreManager scoreManager;
+
     protected override void Start()
     {
         // Finding ScoreManager
         scoreManager = FindObjectOfType<ScoreManager>();
+
+        //dif
+        GetDifficultyManager();
+        bulletDamage = bulletDamage + dM.difficultyInc;
 
         // Enemy Start
         base.Start();
@@ -66,7 +71,7 @@ public class MissileEnemy : Enemy
 
     public override void Die()
     {
-        base.Die();
         scoreManager.score += 50;
+        base.Die();
     }
 }
