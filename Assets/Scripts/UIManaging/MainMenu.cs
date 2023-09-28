@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
 {
     public AudioSource PlayGameSound;
     public AudioClip LaserSound;
+    public GameObject MainMenuUI, OptionsMenuUI;
     public void PlayGame()
     {
         Time.timeScale = 1f;
@@ -17,6 +18,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void OprionsMenu()
+    {
+        MainMenuUI.SetActive(false);
+        OptionsMenuUI.SetActive(true);
+    }
     public void QuitGame()
     {
         
