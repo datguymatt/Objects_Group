@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
         PlayGameSound.PlayOneShot(LaserSound);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
+    // Transfer to options menu
     public void OprionsMenu()
     {
         MainMenuUI.SetActive(false);
