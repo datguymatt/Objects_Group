@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590ec0f1e389b3147af1dbd4638e775b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  regenAmount: 0
+  regenAmount: 20
   audioManager: {fileID: 0}
 --- !u!1 &4002032649870070807
 GameObject:

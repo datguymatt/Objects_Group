@@ -26,6 +26,7 @@ public class HealthRegen : MonoBehaviour
             Player player = collision.GetComponent<Player>();
             player.health.AddHealth(regenAmount);
             audioManager.PlaySFXAudio("player_health_regen");
+            ScoreManager.health = player.health.GetHealth();
             Destroy(gameObject);
         }
     }
