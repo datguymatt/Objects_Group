@@ -171,6 +171,8 @@ MonoBehaviour:
   maxHealth: 30
   currentHealth: 30
   speed: 0
-  weaponDamage: 0
+  weaponDamage: 20
+  dM: {fileID: 0}
+  difficultyManager: {fileID: 0}
   spawnTime: 5
   bearPrefab: {fileID: 7609634767764105852, guid: 456d12ee6843f504bae29840f732a0c3, type: 3}
