@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SCREEN RESOLUTION
+  m_text: Graphics quality
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 853a000c41553804fb32602b4b1738b1, type: 2}
   m_sharedMaterial: {fileID: -9015235361088974288, guid: 853a000c41553804fb32602b4b1738b1, type: 2}
@@ -2546,7 +2546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.73333335, g: 0.28235295, b: 0.78431374, a: 1}
+  m_Color: {r: 0.93522996, g: 0.3622641, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
