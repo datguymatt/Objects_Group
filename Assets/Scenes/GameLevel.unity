@@ -180,7 +180,7 @@ AudioSource:
   m_GameObject: {fileID: 215503533}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 4790138205990193470, guid: ab9c532f33ea27341a76f1d8a1d3f6b6, type: 2}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: ab9c532f33ea27341a76f1d8a1d3f6b6, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.537
@@ -4079,7 +4079,7 @@ AudioSource:
   m_GameObject: {fileID: 2109985709}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -6575468058378236003, guid: ab9c532f33ea27341a76f1d8a1d3f6b6, type: 2}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: b92b197fd418d7241bae867d0b40c495, type: 2}
   m_audioClip: {fileID: 8300000, guid: 497342c0000dfda48aa1858d296f0a13, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.658
@@ -6137,6 +6137,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayGameSound: {fileID: 7688479480001953422}
   LaserSound: {fileID: 8300000, guid: 72795b3eb09f3aa44a1df9d4086cdc47, type: 3}
+  MainMenuUI: {fileID: 0}
+  OptionsMenuUI: {fileID: 0}
 --- !u!114 &7688479480133200356
 MonoBehaviour:
   m_ObjectHideFlags: 0

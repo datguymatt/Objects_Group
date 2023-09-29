@@ -11,8 +11,8 @@ public class OptionsMenu : MonoBehaviour
     public int fadeVolumeRate;
 
     // this is where music audiomixer is assigned 
-    public AudioMixer mainmixer;
-    
+    public AudioMixer musicMixer;
+    public AudioMixer sfxMixer;
     // this is where sound audiomixer is assigned
     // public AudioMixer soundMixer;
     public void BackToMainMenu()
@@ -32,13 +32,30 @@ public class OptionsMenu : MonoBehaviour
         //fade out made more smooth by the fadeVolumeRate
         if (fadeVolumeRate != 0)
         {
-            mainmixer.SetFloat("volume1", (volume / fadeVolumeRate));
+            musicMixer.SetFloat("volume1", (volume / fadeVolumeRate));
             if(volume < -75)
             {
-                mainmixer.SetFloat("volume1", -80);
+                musicMixer.SetFloat("volume1", -80);
+
             }
         }
         
+        //mainmixer.SetFloat("volume2", volume);
+        //mainmixer.SetFloat("volume3", volume);
+    }
+    public void SFXVolumeSlider(float volume)
+    {
+        // This operates the exact mixer you choice
+        //fade out made more smooth by the fadeVolumeRate
+        if (fadeVolumeRate != 0)
+        {
+            sfxMixer.SetFloat("volume1", (volume / fadeVolumeRate));
+            if (volume < -75)
+            {
+                sfxMixer.SetFloat("volume1", -80);
+            }
+        }
+
         //mainmixer.SetFloat("volume2", volume);
         //mainmixer.SetFloat("volume3", volume);
     }
