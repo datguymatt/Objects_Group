@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7.14
-  damage: 17
+  damage: 19
   isEnemyBullet: 1
 --- !u!60 &6642214850612418975
 PolygonCollider2D:
