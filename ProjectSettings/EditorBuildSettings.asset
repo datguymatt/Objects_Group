@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/GameLevel.unity
-    guid: e03a0210675bc9f42aeef13822cdda76
+    path: Assets/Scenes/JTGameLevel.unity
+    guid: 38f7680912e2e4e4f83c89b41233968a
   m_configObjects: {}
