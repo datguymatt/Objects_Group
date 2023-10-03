@@ -1,8 +1,11 @@
 using System;
 using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using Unity.IO.LowLevel.Unsafe;
+using UnityEditor.Experimental.GraphView;
 
-public class Player : PlayableObject
+public class PlayerJTMerge : PlayableObject
 {
     //variables
     [SerializeField] private Camera cam;
@@ -12,9 +15,15 @@ public class Player : PlayableObject
     [SerializeField] private float bulletPowerupSpeed = 0.5f;
     [SerializeField] private Bullet bulletPreFab;
     [SerializeField] private Bomb bombPreFab;
+    [SerializeField] float maxHealthSet;
+    [SerializeField] float currentHealthSet;
 
     //firepoint
     [SerializeField] private Transform firePoint;
+        // JT Scripts, update the weapon shoot()function so that instead of passing a playableobject and then pulling its transform,
+        // just directly pull a transform in the weapon method, and then make that point the shooting spawn point
+        // in this script update Shoot() and ShootHold() to pass shootPoint instead of "this"
+    [SerializeField] private Transform shootPoint;
 
     [SerializeField]
     private AudioManager audioManager;
@@ -24,16 +33,6 @@ public class Player : PlayableObject
     private bool isPowerupActive;
     private bool isShooting = false;
 
-
-    // bomb check
-    public static bool _hasBomb = false;
-
-    // bomb stuff
-    public bool isActiveInventory;
-    [SerializeField] private float bombFuseTime = 2;
-    [SerializeField] private float bombShootSpeed;
-    private ParticleSystem explosion;
-
     /// Jt Script---
     public string childObjectName = "PlayerShip"; // Name of the child object with SpriteRenderer
     public string childObjectAuraName = "PlayerAura"; // Name of the child object with SpriteRenderer
@@ -41,13 +40,20 @@ public class Player : PlayableObject
 
     private Color startColor = Color.red;
     private Color endColor = Color.white;
-    private Color auraColor = new Color(0.9137255f, 0.0f, 0.8353961f, 0.1568628f);
+    private Color auraColor = new Color(0.9137255f, 0.0f, 0.8353961f, 0.282353f);
     private Color hurtAuraColor = new Color(0.9150943f, 0.6100943f, 0f, 0f);
 
     private SpriteRenderer spriteRenderer; // Reference to the SpriteRenderer component
     private SpriteRenderer spriteRendererAura; // Reference to the SpriteRenderer component
 
     /// JTEnd----------
+
+    // bomb stuff
+    public bool _hasBomb = false;
+    public bool isActiveInventory;
+    [SerializeField] private float bombFuseTime = 2;
+    [SerializeField] private float bombShootSpeed;
+    private ParticleSystem explosion;
 
     public void SetPowerupFeatures()
     {
@@ -59,7 +65,7 @@ public class Player : PlayableObject
         isPowerupActive = false;
     }
 
-    private void Awake()
+    private void Awake() 
     {
                 /// JT Script
         Transform childObject = transform.Find(childObjectName);
@@ -71,11 +77,8 @@ public class Player : PlayableObject
     }
     private void Start()
     {
-        //explicity set health vars, just in case inspector is defaulting to 0
-        maxHealth = 200;
-        currentHealth = 200;
-        //set player health
-        health = new Health(maxHealth,10, currentHealth);
+        health = new Health(maxHealthSet, 0.5f, currentHealthSet);
+        //health.RegenHealth();
 
         //Set The Player Weapon
         Debug.Log(weaponDamage + "is your wepaon damage");
@@ -87,6 +90,9 @@ public class Player : PlayableObject
         //set the score, health, highscore
         //health
         ScoreManager.health = health.GetHealth();
+
+
+
     }
 
     private void Update()
@@ -114,15 +120,14 @@ public class Player : PlayableObject
                 ScoreManager.bombsInventory--;
             }
         }
-        
     }
 
     public override void Shoot()
-    {
-        //where is this supposed to be called from?
-        weapon.Shoot(bulletPreFab, this, "Enemy");
-        audioManager.PlaySFXAudio("player_laser_shoot");
-    }
+     {
+    //     //where is this supposed to be called from?
+    //     weapon.Shoot(bulletPreFab, shootPoint, "Enemy");
+    //     audioManager.PlaySFXAudio("player_laser_shoot");
+     }
 
     public override void Attack(Transform target)
     {
@@ -156,8 +161,8 @@ public class Player : PlayableObject
         while (isPowerupActive && Input.GetKey(KeyCode.Mouse0)) 
         {
             yield return new WaitForSeconds(bulletPowerupSpeed);
-            weapon.Shoot(bulletPreFab, this, "Enemy");
-            audioManager.PlaySFXAudio("player_laser_shoot");
+            // weapon.Shoot(bulletPreFab, shootPoint, "Enemy");
+            // audioManager.PlaySFXAudio("player_laser_shoot");
         }
         isShooting = false;
         
@@ -186,26 +191,16 @@ public class Player : PlayableObject
             //kill all enemies
             foreach (GameObject g in GameObject.FindGameObjectsWithTag("Enemy"))
             {
-                if(g.gameObject.name == "Bullet(Clone)")
-                {
-                    //do nothing
-                    Debug.Log("this is not an enemy");
-                }
-                else
-                {
-                    Debug.Log("I'm about to destroy" + g.gameObject.name);
-                    if (g.gameObject.name != "Sprite")
-                    {
-                        g.GetComponent<Enemy>().Die();
-                    }
-                    Debug.Log("successfully destroyed" + g.gameObject.name);
-                }
+                Destroy(g);
             }
             yield return new WaitForSeconds(0.5f);
             Destroy(tempBomb.gameObject);
     }
 
-        //JTSCript
+
+    
+   
+    //JTSCript
         private IEnumerator LerpColor()
     {
         float startTime = Time.time;
@@ -233,5 +228,4 @@ public class Player : PlayableObject
         }
     }
     //JTEnd
-    
 }

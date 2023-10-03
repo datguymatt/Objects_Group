@@ -1,10 +1,9 @@
 using Unity.IO.LowLevel.Unsafe;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
 
-public class Enemy : PlayableObject
+public class EnemyJTMerge : PlayableObject
 {
     private EnemyType enemyType;
 
@@ -15,13 +14,12 @@ public class Enemy : PlayableObject
 
     protected AudioManager audioManager;
 
-    public DifficultyManager dM;
-    public GameObject difficultyManager;
-
     /// Jt Script---
     public string childObjectName = "Sprite"; // Name of the child object with SpriteRenderer
     public string childObjectAuraName = "EnemyAura"; // Name of the child object with SpriteRenderer
+
     public float damageAnimDuration = 0.25f; // Time in seconds for the color transition
+
     private Color startColor = Color.red;
     private Color endColor = Color.white;
     private Color auraColor = new Color(0.9150943f, 0.6100943f, 0f, 0.1294118f);
@@ -31,29 +29,25 @@ public class Enemy : PlayableObject
     private SpriteRenderer spriteRendererAura; // Reference to the SpriteRenderer component
 
     /// JTEnd----------
-
     protected virtual void Start()
     {
         //find the player in the menu - this is the eternal target for the enemies
         //assign that position to the Transform object variable
         target = GameObject.FindWithTag("Player").transform;
-        GetDifficultyManager();
+        
         audioManager = FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
-    
         /// JT Script
         Transform childObject = transform.Find(childObjectName);
         Transform childObjectAura = transform.Find(childObjectAuraName);
         spriteRenderer = childObject.GetComponent<SpriteRenderer>();
         spriteRendererAura = childObjectAura.GetComponent<SpriteRenderer>();
+
     }
 
     protected virtual void Update()
     {
         ////rotate towards player
-        if (target != null) 
-        {
-            target = GameObject.FindWithTag("Player").transform;
-        }
+        target = GameObject.FindWithTag("Player").transform;
     }
     public override void Move(Vector2 direction, Vector2 target)
     {}
@@ -90,28 +84,19 @@ public class Enemy : PlayableObject
         this.enemyType = enemyType;
     }
 
-    public override void Die()
-    { 
-        base.Die();
-    }
-
     public override void GetDamage(float damage)
     {
         health.DeductHealth(damage);
         audioManager.PlaySFXAudio("enemy_hit_bullet");
         Debug.Log(health.GetHealth() + "is this enemies health");
-        
+        //JT Script
         StartCoroutine(LerpColor());
+        //end
 
         if (health.GetHealth() <= 0)
         {
             Die();
         }
-    }
-    public void GetDifficultyManager()
-    {
-        difficultyManager = GameObject.Find("DifficultyManager");
-        dM = difficultyManager.GetComponent<DifficultyManager>();
     }
 
     //JTSCript
@@ -143,3 +128,4 @@ public class Enemy : PlayableObject
     }
     //JTEnd
 }
+
