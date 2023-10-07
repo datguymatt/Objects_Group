@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Player : PlayableObject
@@ -26,12 +25,29 @@ public class Player : PlayableObject
     private bool isShooting = false;
 
 
+    // bomb check
+    public static bool _hasBomb = false;
+
     // bomb stuff
-    public bool _hasBomb = false;
     public bool isActiveInventory;
     [SerializeField] private float bombFuseTime = 2;
     [SerializeField] private float bombShootSpeed;
     private ParticleSystem explosion;
+
+    /// Jt Script---
+    public string childObjectName = "PlayerShip"; // Name of the child object with SpriteRenderer
+    public string childObjectAuraName = "PlayerAura"; // Name of the child object with SpriteRenderer
+    public float damageAnimDuration = 0.25f; // Time in seconds for the color transition
+
+    private Color startColor = Color.red;
+    private Color endColor = Color.white;
+    private Color auraColor = new Color(0.9137255f, 0.0f, 0.8353961f, 0.1568628f);
+    private Color hurtAuraColor = new Color(0.9150943f, 0.6100943f, 0f, 0f);
+
+    private SpriteRenderer spriteRenderer; // Reference to the SpriteRenderer component
+    private SpriteRenderer spriteRendererAura; // Reference to the SpriteRenderer component
+
+    /// JTEnd----------
 
     public void SetPowerupFeatures()
     {
@@ -43,13 +59,23 @@ public class Player : PlayableObject
         isPowerupActive = false;
     }
 
+    private void Awake()
+    {
+                /// JT Script
+        Transform childObject = transform.Find(childObjectName);
+        Transform childObjectAura = transform.Find(childObjectAuraName);
+
+        spriteRenderer = childObject.GetComponent<SpriteRenderer>();
+
+        spriteRendererAura = childObjectAura.GetComponent<SpriteRenderer>();
+    }
     private void Start()
     {
         //explicity set health vars, just in case inspector is defaulting to 0
         maxHealth = 200;
         currentHealth = 200;
         //set player health
-        health = new Health(maxHealth, currentHealth);
+        health = new Health(maxHealth,10, currentHealth);
 
         //Set The Player Weapon
         Debug.Log(weaponDamage + "is your wepaon damage");
@@ -88,6 +114,7 @@ public class Player : PlayableObject
                 ScoreManager.bombsInventory--;
             }
         }
+        
     }
 
     public override void Shoot()
@@ -110,6 +137,9 @@ public class Player : PlayableObject
 
         //update scoreboard
         ScoreManager.health = health.GetHealth();
+
+        StartCoroutine(LerpColor());
+
 
         if (Mathf.RoundToInt(health.GetHealth()) <= 0)
         {
@@ -156,9 +186,52 @@ public class Player : PlayableObject
             //kill all enemies
             foreach (GameObject g in GameObject.FindGameObjectsWithTag("Enemy"))
             {
-                g.GetComponent<Enemy>().Die();
+                if(g.gameObject.name == "Bullet(Clone)")
+                {
+                    //do nothing
+                    Debug.Log("this is not an enemy");
+                }
+                else
+                {
+                    Debug.Log("I'm about to destroy" + g.gameObject.name);
+                    if (g.gameObject.name != "Sprite")
+                    {
+                        g.GetComponent<Enemy>().Die();
+                    }
+                    Debug.Log("successfully destroyed" + g.gameObject.name);
+                }
             }
             yield return new WaitForSeconds(0.5f);
             Destroy(tempBomb.gameObject);
     }
+
+        //JTSCript
+        private IEnumerator LerpColor()
+    {
+        float startTime = Time.time;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < damageAnimDuration)
+        {
+            // Calculate the current progress of the lerp
+            float t = elapsedTime / damageAnimDuration;
+
+            // Interpolate the color from red to white
+            Color lerpedColor = Color.Lerp(startColor, endColor, t);
+            Color lerpedAura = Color.Lerp(hurtAuraColor, auraColor, t);
+            // Assign the lerped color to the SpriteRenderer
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.color = lerpedColor;
+                spriteRendererAura.color = lerpedAura;
+            }
+
+            // Update the elapsed time
+            elapsedTime = Time.time - startTime;
+
+            yield return null;
+        }
+    }
+    //JTEnd
+    
 }

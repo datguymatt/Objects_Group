@@ -1,5 +1,5 @@
 
-//this isn't really used for much, but could be...
+//this isn't really used for much
 public enum EnemyType
 {
     Melee,

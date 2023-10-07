@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MissileEnemy : Enemy
 {
@@ -11,13 +12,22 @@ public class MissileEnemy : Enemy
     [SerializeField] protected Bullet bulletPreFab;
 
     [SerializeField] protected float bulletDamage;
-    private ScoreManager scoreManager;
+
+    // Finding ScoreManager
+    ScoreManager scoreManager;
 
     protected override void Start()
     {
+        // Finding ScoreManager
         scoreManager = FindObjectOfType<ScoreManager>();
+
+        //dif
+        GetDifficultyManager();
+        bulletDamage = bulletDamage + dM.difficultyInc;
+
+        // Enemy Start
         base.Start();
-        health = new Health(maxHealth, currentHealth);
+        health = new Health(200, 0, 200);
         weapon = new Weapon("Missile Enemy Weapon", bulletDamage, bulletSpeed);
     }
 
@@ -27,7 +37,7 @@ public class MissileEnemy : Enemy
     }
     protected override void Update()
     {
-        if (GameManager2.gameIsFinished == false)
+        if(target != null) 
         {
             base.Update();
             //move while not in the player perimeter
@@ -61,7 +71,7 @@ public class MissileEnemy : Enemy
 
     public override void Die()
     {
-        base.Die();
         scoreManager.score += 50;
+        base.Die();
     }
 }
